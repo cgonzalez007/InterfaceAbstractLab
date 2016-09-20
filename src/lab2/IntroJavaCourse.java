@@ -6,7 +6,7 @@ package lab2;
  * @author      your name goes here
  * @version     1.00
  */
-public class IntroJavaCourse implements Course, CourseWithPrerequisites {
+public class IntroJavaCourse implements ProgrammingCourse {
 
     private String courseName;
     private String courseNumber;
@@ -38,7 +38,7 @@ public class IntroJavaCourse implements Course, CourseWithPrerequisites {
         }
         return isValid;
     }
-
+    @Override
     public final String getPrerequisites() {
         return prerequisites;
     }
@@ -51,7 +51,7 @@ public class IntroJavaCourse implements Course, CourseWithPrerequisites {
         }
         return isValid;
     }
-
+    @Override
     public final void setPrerequisites(String prerequisites) {
         if (isValidPrerequisites(prerequisites)) {
             this.prerequisites = prerequisites;

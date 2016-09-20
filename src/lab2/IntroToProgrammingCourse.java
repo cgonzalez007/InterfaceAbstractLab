@@ -6,11 +6,12 @@ package lab2;
  * @author      your name goes here
  * @version     1.00
  */
-public class IntroToProgrammingCourse implements Course {
+public class IntroToProgrammingCourse implements ProgrammingCourse {
 
     private String courseName;
     private String courseNumber;
     private double credits;
+    private String prerequisites;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
         this.setCourseName(courseName);
@@ -77,6 +78,25 @@ public class IntroToProgrammingCourse implements Course {
     public final void setCourseName(String courseName) {
         if (isValidCourseName(courseName)) {
             this.courseName = courseName;
+        }
+    }
+    @Override
+    public final String getPrerequisites() {
+        return prerequisites;
+    }
+
+    //Mock Validation
+    private boolean isValidPrerequisites(String prerequisites) {
+        boolean isValid = true;
+        if (prerequisites == null || prerequisites.length() == 0) {
+            isValid = false;
+        }
+        return isValid;
+    }
+    @Override
+    public final void setPrerequisites(String prerequisites) {
+        if (isValidPrerequisites(prerequisites)) {
+            this.prerequisites = prerequisites;
         }
     }
 }

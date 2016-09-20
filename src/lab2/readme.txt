@@ -14,19 +14,19 @@ Objectives for Lab #2:
 Instructions for Lab #2:
 ----------------------
 1. Create an interface super class that contains common methods
-   to be inherited by the sub-classes that are provided.
+   to be inherited by the sub-classes that are provided.x 
 2. Modify your sub-classes to take advantage of this inheritance. You will 
    need to implement all methods in the sub classses Remember that Netbeans has
    a wizard to help you with this. You will see a little yellow light bulb
    at the left of the code. Clicking it will let "implement all abstract
    methods". How will you deal with common properties? Remember, Interfaces
-   can't habe properties!
-3. Fix any and all encapsulation problems.
+   can't have properties!x 
+3. Fix any and all encapsulation problems. x
 4. Create a startup class to test your code. In this startup class create and
-   use at least one instance of each sub-class.
+   use at least one instance of each sub-class.x
 5. In the startup class document what you think is good or bad about this
    architecture from the perspective of using abstraction and inheritance.
-   (Remember, a startup class must have a main method)
+   (Remember, a startup class must have a main method)x
 6. In your solution when can Liskov Substitution principle be used and when
    is it not possible. Write down your answer by providing a comment in the
    startup class.

@@ -6,7 +6,7 @@ package lab2;
  * @author      your name goes here
  * @version     1.00
  */
-public class AdvancedJavaCourse implements Course, CourseWithPrerequisites{
+public class AdvancedJavaCourse implements ProgrammingCourse{
 
     private String courseName;
     private String courseNumber;
@@ -21,7 +21,7 @@ public class AdvancedJavaCourse implements Course, CourseWithPrerequisites{
     public final String getCapitalizedCourseName() {
         return this.getCourseName().toUpperCase();
     }
-
+    @Override
     public final String getPrerequisites() {
         return prerequisites;
     }
@@ -34,7 +34,7 @@ public class AdvancedJavaCourse implements Course, CourseWithPrerequisites{
         }
         return isValid;
     }
-
+    @Override
     public final void setPrerequisites(String prerequisites) {
         if (isValidPrerequisites(prerequisites)) {
             this.prerequisites = prerequisites;

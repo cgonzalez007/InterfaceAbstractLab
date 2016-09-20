@@ -12,4 +12,6 @@ public interface Course {
     public abstract String getCourseName();
     public abstract void setCourseNumber(String courseNumber);
     public abstract String getCourseNumber();
+    public abstract void setPrerequisites(String prerequisites);
+    public abstract String getPrerequisites();
 }
