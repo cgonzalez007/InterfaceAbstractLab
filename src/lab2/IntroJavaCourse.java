@@ -6,8 +6,9 @@ package lab2;
  * @author      your name goes here
  * @version     1.00
  */
-public class IntroJavaCourse {
-    String courseName;
+public class IntroJavaCourse implements Course, CourseWithPrerequisites {
+
+    private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;
@@ -17,29 +18,75 @@ public class IntroJavaCourse {
         this.courseNumber = courseNumber;
     }
 
-    public String getCourseNumber() {
+    @Override
+    public final String getCourseNumber() {
         return courseNumber;
     }
 
-    public void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
+    @Override
+    public final void setCourseNumber(String courseNumber) {
+        if (isValidCourseNumber(courseNumber)) {
+            this.courseNumber = courseNumber;
+        }
     }
 
-    public double getCredits() {
-        return credits;
+    //Mock Validation
+    private boolean isValidCourseNumber(String courseNumber) {
+        boolean isValid = true;
+        if (courseNumber == null || courseNumber.length() == 0) {
+            isValid = false;
+        }
+        return isValid;
     }
 
-    public void setCredits(double credits) {
-        this.credits = credits;
-    }
-
-    public String getPrerequisites() {
+    public final String getPrerequisites() {
         return prerequisites;
     }
 
-    public void setPrerequisites(String prerequisites) {
-        this.prerequisites = prerequisites;
+    //Mock Validation
+    private boolean isValidPrerequisites(String prerequisites) {
+        boolean isValid = true;
+        if (prerequisites == null || prerequisites.length() == 0) {
+            isValid = false;
+        }
+        return isValid;
     }
 
-    
+    public final void setPrerequisites(String prerequisites) {
+        if (isValidPrerequisites(prerequisites)) {
+            this.prerequisites = prerequisites;
+        }
+    }
+
+    @Override
+    public final String getCourseName() {
+        return courseName;
+    }
+
+    @Override
+    public final void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    //Mock Validation
+    private boolean isValidAmountOfCredits(double credits) {
+        boolean isValid = true;
+        if (credits < 0.5 || credits > 4.0) {
+            isValid = false;
+        }
+        return isValid;
+    }
+
+    @Override
+    public final void setCredits(double credits) {
+        if (isValidAmountOfCredits(credits)) {
+            this.credits = credits;
+        }
+    }
+
+    @Override
+    public final double getCredits() {
+        return credits;
+    }
+
 }
